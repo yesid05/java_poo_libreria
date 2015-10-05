@@ -39,19 +39,20 @@ public class PanelLibroBoton extends JPanel implements ActionListener {
         add(btnAgregar);
 
         btnEditar = new JButton("Editar Libro",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_edit_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_EDITAR)));
+        btnEditar.addActionListener(this);
         add(btnEditar);
 
         btnVer = new JButton("Mas información",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_info_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_INFORMACION)));
         add(btnVer);
 
         btnEliminar = new JButton("Eliminar Libro",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_delete_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_ELIMINAR)));
         add(btnEliminar);
 
         btnBuscar = new JButton("Buscar Libro",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_find_in_page_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_BUSCAR)));
         add(btnBuscar);
 
     }
@@ -59,12 +60,18 @@ public class PanelLibroBoton extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnAgregar) {
-            PanelAgregarLibro a = new PanelAgregarLibro();
-            a.pack();
-            a.setModal(true);
-            a.setLocationRelativeTo(this);
-            a.setVisible(true);
-
+            PanelAgregarLibro panelAgregarLibro = new PanelAgregarLibro();
+            panelAgregarLibro.pack();
+            panelAgregarLibro.setModal(true);
+            panelAgregarLibro.setLocationRelativeTo(this);
+            panelAgregarLibro.setVisible(true);
+        }
+        if(e.getSource() == btnEditar){
+            PanelEditarLibro panelEditarLibro = new PanelEditarLibro();
+            panelEditarLibro.pack();
+            panelEditarLibro.setModal(true);
+            panelEditarLibro.setLocationRelativeTo(this);
+            panelEditarLibro.setVisible(true);
         }
     }
 

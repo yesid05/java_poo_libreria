@@ -15,6 +15,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import javax.swing.*;
+import modelo.Icons;
 
 /**
  *
@@ -61,9 +62,13 @@ public class PanelAgregarLibro extends JDialog {
     public PanelAgregarLibro() {
         setLayout(new BorderLayout(5, 5));
         setResizable(false);
+        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
         JPanel panelDatos = new JPanel(new GridBagLayout());
+        JPanel panelBoton = new JPanel(new GridBagLayout());
+        
         GridBagConstraints gbc = new GridBagConstraints();
+        
         lblNombre = new JLabel("Nombre del libro:");
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -172,17 +177,17 @@ public class PanelAgregarLibro extends JDialog {
         panelDatos.add(btnExplorar, gbc);
 
         fecha = new JDateChooser();
-        fecha.setIcon(new ImageIcon(getToolkit().getClass().getResource("/img/ic_today_black_24dp_2x.png")));
+        fecha.setIcon(new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_FECHA)));
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 7;
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.BOTH;
         panelDatos.add(fecha, gbc);
-
-        JPanel panelBoton = new JPanel(new GridBagLayout());
+        
+        
         btnGuardar = new JButton("Guardar",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_save_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_GUARDAR)));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -191,7 +196,7 @@ public class PanelAgregarLibro extends JDialog {
         panelBoton.add(btnGuardar, gbc);
 
         btnCancelar = new JButton("Cancelar",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_cancel_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_CANCELAR)));
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 0;

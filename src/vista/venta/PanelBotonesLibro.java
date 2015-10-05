@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import modelo.Icons;
 
 /**
  *
@@ -28,12 +29,12 @@ public class PanelBotonesLibro extends JPanel implements ActionListener {
     public PanelBotonesLibro() {
         setLayout(new GridLayout(1, 2, 5, 5));
         btnVender = new JButton("Vender",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_add_shopping_cart_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_AGREGAR_COMPRA)));
         btnVender.addActionListener(this);
         add(btnVender);
         
         btnVer = new JButton("Ver",
-                new ImageIcon(getToolkit().getClass().getResource("/img/ic_info_black_24dp_2x.png")));
+                new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_INFORMACION)));
         btnVer.addActionListener(this);
         add(btnVer);
     }
