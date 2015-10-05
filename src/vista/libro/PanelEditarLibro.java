@@ -85,6 +85,49 @@ public class PanelEditarLibro extends JDialog{
         gbc.insets = new Insets(5, 5, 5, 5);
         panelDatos.add(lblIdioma,gbc);
         
+        lblCantidad = new JLabel("Cantidad:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblCantidad,gbc);
+        
+        lblPrecio = new JLabel("Precio del libro:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblPrecio,gbc);
+        
+        lblAutor = new JLabel("Autor del libro:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 4;  
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblAutor,gbc);
+        
+        lblEditorial = new JLabel("Editorial:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblEditorial,gbc);
+        
+        lblImagen = new JLabel("Imagen del libro:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblImagen,gbc);
+        
+        lblFecha = new JLabel("Fecha de publicación:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        panelDatos.add(lblImagen,gbc);
+                
+        
         add(panelDatos,BorderLayout.NORTH);
         add(panelBoton,BorderLayout.SOUTH);
     }
