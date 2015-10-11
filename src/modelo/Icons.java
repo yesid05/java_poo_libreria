@@ -35,5 +35,11 @@ public class Icons {
 
     public static final String TAB_COMPRA = "/img/ic_shopping_cart_black_24dp_1x.png";
 
-    public static final String BTN_FECHA = "/img/ic_today_black_24dp_2x.png";
+    public static final String BTN_FECHA = "/img/ic_today_black_24dp_2x.png";   
+    
+    public static final String BTN_EXAMINAR = "/img/ic_attach_file_black_24dp_2x.png";
+    
+    public static final String BTN_OK = "/img/ic_check_circle_black_24dp_2x.png";
+    
+    public static final String IMG_DAFAULT = "/img/ic_image_black_24dp_2x.png";
 }

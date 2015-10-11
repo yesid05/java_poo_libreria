@@ -45,6 +45,7 @@ public class PanelLibroBoton extends JPanel implements ActionListener {
 
         btnVer = new JButton("Mas información",
                 new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_INFORMACION)));
+        btnVer.addActionListener(this);
         add(btnVer);
 
         btnEliminar = new JButton("Eliminar Libro",
@@ -72,6 +73,13 @@ public class PanelLibroBoton extends JPanel implements ActionListener {
             panelEditarLibro.setModal(true);
             panelEditarLibro.setLocationRelativeTo(this);
             panelEditarLibro.setVisible(true);
+        }
+        if(e.getSource() == btnVer){
+            PanelInformacion panelInformacion = new PanelInformacion();
+            panelInformacion.pack();
+            panelInformacion.setModal(true);
+            panelInformacion.setLocationRelativeTo(this);
+            panelInformacion.setVisible(true);
         }
     }
 

@@ -11,6 +11,7 @@ import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -19,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import modelo.Autor;
 import modelo.Editorial;
+import modelo.Icons;
 
 /**
  *
@@ -57,6 +59,8 @@ public class PanelEditarLibro extends JDialog{
     private JDateChooser jdcFecha;
     
     private JButton btnExaminar;
+    
+    private JButton btnVerImagen;
     
     private JButton btnCancelar;
     
@@ -125,8 +129,108 @@ public class PanelEditarLibro extends JDialog{
         gbc.gridx = 0;
         gbc.gridy = 7;
         gbc.insets = new Insets(5, 5, 5, 5);
-        panelDatos.add(lblImagen,gbc);
+        panelDatos.add(lblFecha,gbc);       
+        
                 
+        txtNombre = new JTextField(5);
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(txtNombre,gbc);
+        
+        txtIdioma = new JTextField(5);
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(txtIdioma,gbc);
+        
+        txtCantidad = new JTextField(5);
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(txtCantidad,gbc);
+        
+        txtPrecio = new JTextField(5);
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(txtPrecio,gbc);
+        
+        jcbAutor = new JComboBox<Autor>();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(jcbAutor,gbc);
+        
+        jcbEditorial = new JComboBox<Editorial>();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 5;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(jcbEditorial,gbc);
+        
+        btnExaminar = new JButton("Examinar",
+            new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_EXAMINAR)));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 6;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(btnExaminar,gbc);
+        
+        btnVerImagen = new JButton("Ver imagen",
+            new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_INFORMACION)));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 2;
+        gbc.gridy = 6;
+        gbc.insets = new Insets(5, 0, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(btnVerImagen,gbc);
+        
+        jdcFecha = new JDateChooser();
+        jdcFecha.setIcon(new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_FECHA)));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 7;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelDatos.add(jdcFecha,gbc);
+        
+        btnGuardar = new JButton("Guardar",
+            new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_GUARDAR)));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelBoton.add(btnGuardar,gbc);
+        
+        btnCancelar = new JButton("Cancelar",
+            new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_CANCELAR)));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.BOTH;
+        panelBoton.add(btnCancelar,gbc);
         
         add(panelDatos,BorderLayout.NORTH);
         add(panelBoton,BorderLayout.SOUTH);

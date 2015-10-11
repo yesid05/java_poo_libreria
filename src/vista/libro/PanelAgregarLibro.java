@@ -168,7 +168,8 @@ public class PanelAgregarLibro extends JDialog {
         gbc.fill = GridBagConstraints.BOTH;
         panelDatos.add(editorial, gbc);
 
-        btnExplorar = new JButton("Examinar");
+        btnExplorar = new JButton("Examinar",
+            new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_EXAMINAR)));
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 6;
