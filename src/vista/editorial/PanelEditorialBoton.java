@@ -7,6 +7,8 @@
 package vista.editorial;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -16,7 +18,7 @@ import modelo.Icons;
  *
  * @author yesid caicedo
  */
-public class PanelEditorialBoton extends JPanel{
+public class PanelEditorialBoton extends JPanel implements ActionListener{
     
     private JButton btnAgregar;
     
@@ -33,6 +35,7 @@ public class PanelEditorialBoton extends JPanel{
         
         btnAgregar=new JButton("Agregar editorial",
         new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_AGREGAR)));
+        btnAgregar.addActionListener(this);
         add(btnAgregar);
         
         btnEditar = new JButton("Editar informacion",
@@ -51,6 +54,18 @@ public class PanelEditorialBoton extends JPanel{
         new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_BUSCAR)));
         add(btnBuscar);
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==btnAgregar) {
+            PanelAgregarEditorial panelAgregarEditorial = new PanelAgregarEditorial();
+            panelAgregarEditorial.pack();
+            panelAgregarEditorial.setResizable(false);
+            panelAgregarEditorial.setLocationRelativeTo(this);
+            panelAgregarEditorial.setModal(true);
+            panelAgregarEditorial.setVisible(true);
+        }
     }
     
     
