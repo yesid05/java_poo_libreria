@@ -40,6 +40,7 @@ public class PanelEditorialBoton extends JPanel implements ActionListener{
         
         btnEditar = new JButton("Editar informacion",
         new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_EDITAR)));
+        btnEditar.addActionListener(this);
         add(btnEditar);
         
         btnInformacion = new JButton("Más información", 
@@ -65,6 +66,14 @@ public class PanelEditorialBoton extends JPanel implements ActionListener{
             panelAgregarEditorial.setLocationRelativeTo(this);
             panelAgregarEditorial.setModal(true);
             panelAgregarEditorial.setVisible(true);
+        }
+        if(e.getSource() == btnEditar){
+            PanelEditarEditorial panelEditarEditorial = new PanelEditarEditorial();
+            panelEditarEditorial.pack();
+            panelEditarEditorial.setResizable(false);
+            panelEditarEditorial.setLocationRelativeTo(null);
+            panelEditarEditorial.setModal(true);
+            panelEditarEditorial.setVisible(true);
         }
     }
     
