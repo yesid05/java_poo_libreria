@@ -45,6 +45,7 @@ public class PanelEditorialBoton extends JPanel implements ActionListener{
         
         btnInformacion = new JButton("Más información", 
         new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_INFORMACION)));
+        btnInformacion.addActionListener(this);
         add(btnInformacion);
         
         btnEliminar = new JButton("Eliminar editorial",
@@ -74,6 +75,14 @@ public class PanelEditorialBoton extends JPanel implements ActionListener{
             panelEditarEditorial.setLocationRelativeTo(null);
             panelEditarEditorial.setModal(true);
             panelEditarEditorial.setVisible(true);
+        }
+        if(e.getSource() == btnInformacion){
+            PanelInformacionEditorial panelInformacionEditorial= new PanelInformacionEditorial();
+            panelInformacionEditorial.pack();
+            panelInformacionEditorial.setResizable(false);
+            panelInformacionEditorial.setLocationRelativeTo(null);
+            panelInformacionEditorial.setModal(true);
+            panelInformacionEditorial.setVisible(true);
         }
     }
     

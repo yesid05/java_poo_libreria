@@ -7,6 +7,8 @@
 package vista.autor;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -16,7 +18,7 @@ import modelo.Icons;
  *
  * @author yesid caicedo
  */
-public class PanelAutorBoton extends JPanel {
+public class PanelAutorBoton extends JPanel implements ActionListener{
     
     private JButton btnAgregar;
     
@@ -34,10 +36,12 @@ public class PanelAutorBoton extends JPanel {
         
         btnAgregar = new JButton("Agregar autor",
                 new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_AGREGAR)));
+        btnAgregar.addActionListener(this);
         add(btnAgregar);
         
         btnEditar = new JButton("Editar autor",
                 new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_EDITAR)));
+        btnEditar.addActionListener(this);
         add(btnEditar);
         
         btnInformacion = new JButton("Más información",
@@ -52,6 +56,26 @@ public class PanelAutorBoton extends JPanel {
         new ImageIcon(getToolkit().getClass().getResource(Icons.BTN_BUSCAR)));
         add(btnConsultar);        
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnAgregar) {
+            PanelAgragarAutor panelAgragarAutor = new PanelAgragarAutor();
+            panelAgragarAutor.pack();
+            panelAgragarAutor.setResizable(false);
+            panelAgragarAutor.setLocationRelativeTo(null);
+            panelAgragarAutor.setModal(true);
+            panelAgragarAutor.setVisible(true);
+        }
+        if(e.getSource() == btnEditar){
+            PanelEditarAutor panelEditarAutor = new PanelEditarAutor();
+            panelEditarAutor.pack();
+            panelEditarAutor.setResizable(false);
+            panelEditarAutor.setLocationRelativeTo(null);
+            panelEditarAutor.setModal(true);
+            panelEditarAutor.setVisible(true);
+        }
     }
     
 }
